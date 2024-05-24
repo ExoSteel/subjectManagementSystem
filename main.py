@@ -6,3 +6,8 @@ import delete
 import display
 import loadData
 import saveData
+
+running = True
+
+while running:
+    display.mainMenu()
