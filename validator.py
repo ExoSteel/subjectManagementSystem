@@ -16,7 +16,7 @@ def validate(data, type=None, lBound=None, uBound=None, length=0, format=None, e
                 flag = False
 
     if lBound != None and uBound != None:
-        flag = True if data >= lBound and data <= uBound else False # Range Check
+        flag = True if int(data) >= lBound and int(data) <= uBound else False # Range Check
     
     if length != 0:
         flag = True if len(data) == length else False # Length Check
@@ -29,3 +29,18 @@ def validate(data, type=None, lBound=None, uBound=None, length=0, format=None, e
             flag = True if data == exist else False
     
     return flag
+
+'''
+# Test
+print(validate(None)) # False
+print(validate("1", int)) # True
+print(validate("1", str)) # True
+print(validate("1", None, 0, 9)) # True
+print(validate("1", None, -5, 0)) # False
+print(validate("1", None, 0, 0, 1)) # True
+print(validate("1", None, 0, 0, 5)) # False
+print(validate("1", None, 0, 0, 0, "\d")) # True
+print(validate("1", None, 0, 0, 0, "\d\d")) # False
+print(validate("1", None, 0, 0, 0, None, ["1"])) # True
+print(validate("1", None, 0, 0, 0, None, ["1", "2"])) # False
+'''

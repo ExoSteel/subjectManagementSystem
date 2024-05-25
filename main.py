@@ -1,5 +1,4 @@
-import search, addSubject, edit, delete, display, loadData,saveData
-from Validation import typeCheck, formatCheck, existenceCheck, batchHeaderCheck, lengthCheck, presenceCheck, rangeCheck
+import search, addSubject, edit, delete, display, loadData, saveData, validator
 from datetime import datetime
 
 running = True
@@ -14,7 +13,6 @@ while running:
     if choice == "1":
         display.searchMenu()
         subjectCode = input()
-        search.
     if choice == "2":
         display.addMenu()
         subjectCode = input()
