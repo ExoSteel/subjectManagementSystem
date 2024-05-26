@@ -71,11 +71,11 @@ def loadMenu():
     print()
     print("-"*99)
     time.sleep(0.05)
-    print("Enter the File's Name [""example.txt""]")
+    print("Enter the File's Name [""example.dat""]")
 
 def saveMenu():
     print()
     print("-"*99)
     time.sleep(0.05)
-    print("Data Has Been Saved")
+    print("Enter the File's Name [""example.dat""]")
     time.sleep(1)

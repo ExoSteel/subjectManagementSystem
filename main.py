@@ -30,8 +30,14 @@ while running:
         elif choice == "2":
             display.searchOpt2()
             subjectName = input()
+            if not validator.validate(subjectName, str): 
+                print("Wrong input, input must be a string!")
+                continue
             found = search.search(subjectName=subjectName, subjects=subjects)
-            print(subject for subject in found)
+            if found == list:
+                [print(subject) for subject in found]
+            else:
+                print(found)
 
         else:
             continue
@@ -51,12 +57,18 @@ while running:
     elif choice == "5":
         display.loadMenu()
         fileName = input()
-        if not validator.validate(fileName, str, None, None, 0, ".bat"):
-            print("File must be a .bat type!")
+        if not validator.validate(fileName, str, None, None, 0, ".[Dd][Aa][Tt]"):
+            print("File must be a .dat type!")
+            continue
         subjects = loadData.load(fileName, subjects)
 
     elif choice == "6":
         display.saveMenu()
+        fileName = input()
+        if not validator.validate(fileName, str, None, None, 0, ".[Dd][Aa][Tt]"):
+            print("File must be a .dat type!")
+            continue
+        saveData.save(subjects, fileName)
 
     else:
         print()

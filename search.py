@@ -11,6 +11,6 @@ def search(subjectCode="", subjectName="", subjects=[]):
     else:                                                               # Using Subject Name to Search
         for subject in subjects:
             subjectDetails = subject.split("|")
-            if subjectName == subjectDetails[2]:
+            if subjectName == subjectDetails[1]:
                 found.append(subject)
     return found if len(found) > 0 else "No Subject Found"
