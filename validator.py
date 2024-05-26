@@ -35,7 +35,7 @@ def validate(data, type=None, lBound=None, uBound=None, length=0, format=None, e
     
     return flag
 
-
+'''
 # Test
 print(validate("1")) # True
 print(validate(None)) # False
@@ -49,4 +49,4 @@ print(validate("1", None, 0, 9, 0, "\d")) # True
 print(validate("1", None, 0, 9, 0, "\d\d")) # False
 print(validate("1", None, 0, 9, 0, None, ["1"])) # True
 print(validate("1", None, 0, 9, 0, None, ["1", "2"])) # False
-
+'''

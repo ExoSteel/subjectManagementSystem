@@ -2,6 +2,7 @@
 import time
 
 def mainMenu():
+    print()
     print("-"*99)
     time.sleep(0.05)
     print("1. Search using Subject Code")
@@ -20,7 +21,7 @@ def mainMenu():
     time.sleep(0.05)
     print("-"*99)
     time.sleep(0.05)
-    print("Enter your choice [1-9] ")
+    print("Enter your choice [1-7]: ")
 
 def searchMenu():
     print()
@@ -29,7 +30,24 @@ def searchMenu():
     print("Search by:")
 
     print("1. 4-Digit Subject Code")
+    time.sleep(0.05)
     print("2. Subject Name")
+    time.sleep(0.05)
+    print("3. Exit")
+    time.sleep(0.05)
+    print("-"*99)
+
+def searchOpt1():
+    print()
+    print("-"*99)
+    time.sleep(0.05)
+    print("Enter the 4-digit Subject Code: ")
+
+def searchOpt2():
+    print()
+    print("-"*99)
+    time.sleep(0.05)
+    print("Enter the Subject Name: ")
 
 def addMenu():
     print()
