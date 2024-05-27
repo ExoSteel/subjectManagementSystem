@@ -43,12 +43,60 @@ while running:
             continue
 
     elif choice == "2":
-        display.addMenu()
+        display.addSCMenu()
         subjectCode = input()
+        if not validator.validate(subjectCode, int, None, None, 4): 
+            print("Wrong input, input must be a 4-digit code!")
+            continue
+
+        display.addSNMenu()
+        subjectName = input()
+        if not validator.validate(subjectName, str): 
+            print("Wrong input, input must be a string!")
+            continue
+
+        display.addSTMenu()
+        subjectType = input()
+        if not validator.validate(subjectType, str, None, None, 1, None, ["A", "P"]): 
+            print("Wrong input, input must either be P or A!")
+            continue
+            
+        if subjectType == "A":
+            display.addP1Menu()
+            P1Len = input()
+            if not validator.validate(P1Len, float, None, None, 0, None, ["2.0", "2.5", "3.0"]): 
+                print("Wrong input, input must be 2.0, 2.5 or 3.0!")
+                continue
+
+            display.addP2Menu()
+            P2Len = input()
+            if not validator.validate(P2Len, float, None, None, 0, None, ["2.0", "2.5", "3.0"]): 
+                print("Wrong input, input must be 2.0, 2.5 or 3.0!")
+                continue
+            subjects.append(addSubject.add(subjectCode, subjectName, subjectType, P1Len=P1Len, P2Len=P2Len))
+        else:
+            display.addPracMenu()
+            PracLen = input()
+            if not validator.validate(PracLen, float, 10.0, 40.0): 
+                print("Wrong input, input must be between 10.0 and 40.0!")
+                continue
+
+            display.addCDMenu()
+            CDate = input()
+            if not validator.validate(CDate, int, None, None, 6, "date"): 
+                print("Wrong input, input must be between 10.0 and 40.0!")
+                continue
+            subjects.append(addSubject.add(subjectCode, subjectName, subjectType, PracLen=PracLen, CDate=CDate))
 
     elif choice == "3":
         display.editMenu()
-        subjectCode = input()
+        Ubound = edit.displaySubs(subjects)
+        if not Ubound:
+            break
+        subjectIndex = input()
+        if not validator.validate(subjectIndex, int, 1, Ubound):
+            print(f"Wrong input, input must be an integer between 1 and {Ubound}!")
+            continue
 
     elif choice == "4":
         display.deleteMenu()

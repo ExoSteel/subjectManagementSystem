@@ -49,17 +49,50 @@ def searchOpt2():
     time.sleep(0.05)
     print("Enter the Subject Name: ")
 
-def addMenu():
+def addSCMenu():
     print()
     print("-"*99)
     time.sleep(0.05)
-    print("Enter the Subject's 4-Digit Code")
+    print("Adding a new Subject Record: ")
+    time.sleep(0.05)
+    print("-"*99)
+    print("Enter the Subject's 4-Digit Code ")
+
+def addSNMenu():
+    print()
+    time.sleep(0.05)
+    print("Enter the Subject's Name ")
+
+def addSTMenu():
+    print()
+    time.sleep(0.05)
+    print("Enter the Subject's Type [A or P] ")
+
+def addP1Menu():
+    print()
+    time.sleep(0.05)
+    print("Enter the Subject's Paper 1 Length [2.0, 2.5 or 3.0] ")
+
+def addP2Menu():
+    print()
+    time.sleep(0.05)
+    print("Enter the Subject's Paper 2 Length [2.0, 2.5 or 3.0] ")
+
+def addPracMenu():
+    print()
+    time.sleep(0.05)
+    print("Enter the Subject's Practical Length [10.0 - 40.0] ")
+
+def addCDMenu():
+    print()
+    time.sleep(0.05)
+    print("Enter the Subject's Final Deadline [YYMMDD] ")
 
 def editMenu():
     print()
     print("-"*99)
     time.sleep(0.05)
-    print("Enter the Subject's 4-Digit Code")
+    print("Which subject would you like to edit?")
 
 def deleteMenu():
     print()

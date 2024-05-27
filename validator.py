@@ -15,9 +15,14 @@ def validate(data, type=None, lBound=None, uBound=None, length=0, format=None, e
                 data.isalnum()
             except:
                 return False
+        elif type == float:
+            try:
+                float(data)
+            except:
+                return False
 
     if lBound != None and uBound != None:
-        if not (int(data) >= lBound and int(data) <= uBound):         # Range Check
+        if not (float(data) >= lBound and float(data) <= uBound):         # Range Check
             return False   
     
     if length != 0:
@@ -25,6 +30,11 @@ def validate(data, type=None, lBound=None, uBound=None, length=0, format=None, e
             return False                       
     
     if format != None:
+        if format == "date":
+            if not (format[2:4] >= 1 and format[2:4] <= 12):
+                return False 
+            elif not (format[4:6] >= 1 and format[4:6] <= 31):
+                return False
         if re.search(format, data) == None:                             # Format Check (using RegEx)
             return False                   
 
