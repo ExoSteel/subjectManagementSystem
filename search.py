@@ -6,7 +6,7 @@ def search(subjectCode="", subjectName="", subjects=[]):
         return "Currently, there is no data loaded into the system"
     elif subjectCode != "":                                             # Using Subject Code to Search
         for subject in subjects:
-            if subjectCode == subject[4]:
+            if subjectCode == subject[0:4]:
                 found.append(subject)
     else:                                                               # Using Subject Name to Search
         for subject in subjects:

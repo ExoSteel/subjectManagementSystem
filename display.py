@@ -88,11 +88,35 @@ def addCDMenu():
     time.sleep(0.05)
     print("Enter the Subject's Final Deadline [YYMMDD] ")
 
-def editMenu():
+def pickMenu():
     print()
     print("-"*99)
     time.sleep(0.05)
     print("Which subject would you like to edit?")
+
+def editMenu(format):
+    print()
+    print("-"*99)
+    time.sleep(0.05)
+    print("Which component would you like to edit?")
+    time.sleep(0.05)
+    print("1. Subject Code")
+    time.sleep(0.05)
+    print("2. Subject Name")
+    time.sleep(0.05)
+    print("3. Subject Type")
+    time.sleep(0.05)
+    if format == "A":
+        print("4. P1 Length")
+        time.sleep(0.05)
+        print("5. P2 Length")
+        time.sleep(0.05)
+    else:
+        print("4. Practical Length")
+        time.sleep(0.05)
+        print("5. Final Deadline Date")
+        time.sleep(0.05)
+    print("-"*99)
 
 def deleteMenu():
     print()
