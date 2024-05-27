@@ -12,6 +12,10 @@ while running:
         continue
 
     if choice == "1":
+        if subjects == []:
+            print()
+            print("There are no subjects loaded into the system currently.")
+            continue
         display.searchMenu()
         choice = input()
         if not validator.validate(choice, int, 1, 3):
@@ -89,7 +93,7 @@ while running:
             subjects.append(addSubject.add(subjectCode, subjectName, subjectType, PracLen=PracLen, CDate=CDate))
 
     elif choice == "3":
-        display.pickMenu()
+        display.pickMenu("edit")
         Ubound = edit.displaySubs(subjects)
         if not Ubound:
             continue
@@ -155,8 +159,16 @@ while running:
         subjects = edit.replace(subjects, int(subjectIndex) - 1, newDetails)
 
     elif choice == "4":
-        display.deleteMenu()
-        subjectCode = input()
+        display.pickMenu("delete")
+        Ubound = edit.displaySubs(subjects)
+        if not Ubound:
+            continue
+        subjectIndex = input()
+        if not validator.validate(subjectIndex, int, 1, Ubound):
+            print(f"Wrong input, input must be an integer between 1 and {Ubound}!")
+            continue
+
+        subjects = delete.delete(subjects, int(subjectIndex) - 1)
 
     elif choice == "5":
         display.loadMenu()

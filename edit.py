@@ -3,9 +3,11 @@ import time
 
 def displaySubs(subjects):
     if subjects == []:
+        print()
         print("There are no subjects loaded into the system currently.")
         return False
     else:
+        print()
         count = 1
         for subject in subjects:
             print(count, subject)

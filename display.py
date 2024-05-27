@@ -88,11 +88,11 @@ def addCDMenu():
     time.sleep(0.05)
     print("Enter the Subject's Final Deadline [YYMMDD] ")
 
-def pickMenu():
+def pickMenu(modifier):
     print()
     print("-"*99)
     time.sleep(0.05)
-    print("Which subject would you like to edit?")
+    print(f"Which subject would you like to {modifier}?")
 
 def editMenu(format):
     print()
