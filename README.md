@@ -13,16 +13,16 @@ Python3 and a virtual environment is highly recommended when running this progra
 
 Installing virtual environment package
 ```
-# pip install virtualenv
+pip install virtualenv
 ```
 
 Setting up virtual environment
 
 
 ```
-# virtualenv -p python3 .env
-# source .env/bin/activate
-# pip install -r requirements.txt
+virtualenv -p python3 .env
+source .env/bin/activate
+pip install -r requirements.txt
 ```
 
 Once done, exit the virtual environment using *deactivate*
